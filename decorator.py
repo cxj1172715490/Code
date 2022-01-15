@@ -9,6 +9,35 @@ def decorator(func):
     return inner
 
 
+# 定义一个带有参数的装饰器
+def route(flag):
+    def decorator(func):
+        def inner(*args, **kwargs):
+            if flag == "+":
+                pass
+            elif flag == "-":
+                pass
+            else:
+                pass
+            result = func(*args, **kwargs)
+            return result
+
+        return inner
+
+    return decorator
+
+
+@route("+")  # 1.route("+")返回decorator 2、产生@decorator装饰器
+def add():
+    pass
+
+
+@route("-")  # 1.route("-")返回decorator 2、产生@decorator装饰器
+def sub():
+    pass
+	
+
+
 @decorator  # 有参无返回值类型
 def test01(a, b):
     print(a + b)
